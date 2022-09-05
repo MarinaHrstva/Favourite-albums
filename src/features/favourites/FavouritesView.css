@@ -1,0 +1,12 @@
+.favourites-container{
+    text-align: center;
+    min-height: 450px;
+    display: flex;
+   justify-content: center;
+    gap: 1.5rem;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 3rem;
+}

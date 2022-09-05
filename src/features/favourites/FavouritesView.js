@@ -1,18 +1,18 @@
 import { useSelector } from "react-redux";
-import Card from "../card/Card";
+import FavCard from "../favCard/FavCard";
 
 import './FavouritesView.css'
 
 const FavouritesView = () => {
-    const data =useSelector((state)=>state.favourites);
-console.log(data);
+
+    const data = useSelector((state) => state.favourites);
+    
     return (
         <>
-            <h2>Favourites</h2>
+            <h2>FAVOURITES</h2>
             <div className="favourites-container">
-                <Card />
-                <Card />
-                <Card />
+                {data.favourites.length == 0 && <p>No albums yet!</p>}
+                {data.favourites.length > 0 && data.favourites.map(f => <FavCard title={f.title} id={f.id} imgUrl={f.imgUrl} key={f.id} />)}
             </div>
         </>
     );

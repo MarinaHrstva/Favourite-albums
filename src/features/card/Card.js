@@ -11,17 +11,21 @@ import { useState } from 'react'
 const Card = ({
     title,
     imgUrl,
-    id
+    id,
 }) => {
+
+
     const [isFavourite, setIsFavourite] = useState(false)
     const dispatch = useDispatch()
+
 
     function onClickHandler() {
         if (isFavourite) {
             dispatch(remove(id))
         } else {
-            dispatch(add({title,imgUrl,isFavourite,id}))
+            dispatch(add({title,imgUrl,isFavourite:true,id}))
         }
+        
         setIsFavourite(state => (
             !state
         ));
