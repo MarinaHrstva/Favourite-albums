@@ -5,7 +5,7 @@ import catalogReducer from '../features/catalog/catalogSlice';
 
 const store = configureStore({
     reducer: {
-        favorites: favouritesReducer,
+        favourites: favouritesReducer,
         catalog: catalogReducer
     }
 })

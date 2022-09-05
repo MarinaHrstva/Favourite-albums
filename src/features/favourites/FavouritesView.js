@@ -1,8 +1,11 @@
-import Card from "../card/Card";
+import { useSelector } from "react-redux";
+import Card from "../../components/card/Card";
 
 import './FavouritesView.css'
 
 const FavouritesView = () => {
+    const data =useSelector((state)=>state.favourites);
+
     return (
         <>
             <h2>Favourites</h2>
