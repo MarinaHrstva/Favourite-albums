@@ -22,7 +22,7 @@ const CatalogView = () => {
 			<div className="catalog-container">
 				{data.loading && <p>Loading...</p>}
 				{data.error && <p>Error: {data.error}</p>}
-				{data.data.length > 0 && data.data.map(a => <Card title={a.title} imgUrl={a.url} key={a.id} />)}
+				{data.data.length > 0 && data.data.map(a => <Card title={a.title} id={a.id} imgUrl={a.url} key={a.id} />)}
 
 			</div>
 		</>
