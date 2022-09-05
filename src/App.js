@@ -1,13 +1,13 @@
 
 import './App.css';
-import Catalog from './components/catalog/Catalog';
-import Favourites from './components/favourites/Favourites';
+import CatalogView from './features/catalog/CatalogView';
+import FavouritesView from './features/favourites/FavouritesView';
 
 function App() {
   return (
     <div className="App">
-      <Catalog />
-      <Favourites />
+      <CatalogView />
+      <FavouritesView />
     </div>
   );
 }
