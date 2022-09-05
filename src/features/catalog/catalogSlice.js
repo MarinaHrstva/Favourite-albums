@@ -8,8 +8,8 @@ const initialState = {
 }
 
 export const fetchCatalog = createAsyncThunk('catalog/fetchCatalog', () => {
-    axios.get('https://jsonplaceholder.typicode.com/photos')
-        .then(res => res.data.splice(0, 5))
+  return  axios.get('https://jsonplaceholder.typicode.com/photos')
+        .then(res => res.data.splice(0,5))
 })
 
 const catalogSlice = createSlice({
