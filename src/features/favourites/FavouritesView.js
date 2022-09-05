@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import Card from "../../components/card/Card";
+import Card from "../card/Card";
 
 import './FavouritesView.css'
 
