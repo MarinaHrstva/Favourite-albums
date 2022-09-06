@@ -14,12 +14,14 @@ When the user clicks the Add button, the album is added to the favourites list
 
 Clicking the X removes the album from the favourites list
 <img src="./src/images/del.png">
+
 <img src="./src/images/deleted.png">
 <br>
 <br>
 
 If the page is refreshed, the favourites list is saved
 <img src="./src/images/beforeRefresh.png">
+
 <img src="./src/images/afterRefresh.png">
 
 <br>
