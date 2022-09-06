@@ -12,7 +12,7 @@ const FavouritesView = () => {
             <h2>FAVOURITES</h2>
             <div className="favourites-container">
                 {data.favourites.length == 0 && <p>No albums yet!</p>}
-                {data.favourites.length > 0 && data.favourites.map(f => <FavCard title={f.title} id={f.id} imgUrl={f.imgUrl} key={f.id} />)}
+                {data.favourites.length > 0 && data.favourites.map(f => <FavCard title={f.title} id={f.id} imgUrl={f.imgUrl} key={f.id+'f'} />)}
             </div>
         </>
     );

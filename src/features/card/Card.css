@@ -1,7 +1,7 @@
 .card-wrapper {
     width: 100%;
     height: 350px;
-    padding: 0.5rem;
+    padding: 1rem;
     position: relative;
     border-radius: 3px;
     transition: all 300ms ease-in;
@@ -12,11 +12,10 @@
 }
 
 .img-container {
-    height: 80%;
+    height: 70%;
     width: 100%;
     overflow: hidden;
     border-radius: 3px;
-
 }
 
 .img-container img {
@@ -24,12 +23,17 @@
     height: 100%;
 }
 
-.icon {
-    position: absolute;
-    top: 67%;
-    left: 85%;
-    z-index: 100;
-    cursor: pointer;
-    color: white;
-    font-size: 30px;
+.title-container {
+    padding: 0 1rem;
+    display: flex;
+    height: 50px;
+}
+
+.add-btn {
+    height: 30px;
+    margin: 1rem;
+}
+
+.add-btn:hover{
+    cursor:pointer
 }

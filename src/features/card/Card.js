@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { add, remove } from '../favourites/favouritesSlice'
 
 import './Card.css'
@@ -13,22 +13,11 @@ const Card = ({
     imgUrl,
     id,
 }) => {
-
-
-    const [isFavourite, setIsFavourite] = useState(false)
+    const favAlbums = useSelector((state) => state.favourites.favourites);
     const dispatch = useDispatch()
 
-
     function onClickHandler() {
-        if (isFavourite) {
-            dispatch(remove(id))
-        } else {
-            dispatch(add({title,imgUrl,isFavourite:true,id}))
-        }
-        
-        setIsFavourite(state => (
-            !state
-        ));
+        dispatch(add({ title, imgUrl, id }))
 
     }
 
@@ -39,7 +28,7 @@ const Card = ({
             </div>
             <div className="title-container">
                 <p>{title}</p>
-                <span className='icon' onClick={onClickHandler}><FontAwesomeIcon icon={isFavourite ? solidHeart : regularHeart} /></span>
+                <button className='add-btn' onClick={onClickHandler}>Add</button>
             </div>
         </div>
     );

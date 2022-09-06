@@ -2,12 +2,36 @@ import { configureStore } from '@reduxjs/toolkit'
 import favouritesReducer from '../features/favourites/favouritesSlice'
 import catalogReducer from '../features/catalog/catalogSlice';
 
+import {
+	persistStore,
+	persistReducer,
+	FLUSH,
+	REHYDRATE,
+	PAUSE,
+	PERSIST,
+	PURGE,
+	REGISTER,
+} from 'redux-persist'
 
-const store = configureStore({
-    reducer: {
-        favourites: favouritesReducer,
-        catalog: catalogReducer
-    }
-})
+import storage from 'redux-persist/lib/storage'
+
+const persistConfig = {
+    key: 'root',
+    version: 1,
+    storage,
+  }
+  const persistedReducer = persistReducer(persistConfig, favouritesReducer, catalogReducer)
+  const persistedReducerCatalog = persistReducer(persistConfig, catalogReducer)
+
+
+export  const store = configureStore({
+    reducer: {favourites:persistedReducer,catalog:persistedReducerCatalog},
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }),
+  })
 
 export default store;

@@ -1,7 +1,8 @@
 
-import './App.css';
 import CatalogView from './features/catalog/CatalogView';
 import FavouritesView from './features/favourites/FavouritesView';
+
+import './App.css';
 
 function App() {
 	return (

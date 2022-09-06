@@ -17,8 +17,6 @@ const FavCard = ({
         dispatch(remove(id))
     }
 
-    console.log(imgUrl)
-
     return (
 
         <div className="card-wrapper">
@@ -27,7 +25,7 @@ const FavCard = ({
             </div>
             <div className="title-container">
                 <p>{title}</p>
-                {/* <span className='icon' onClick={onClickHandler}><FontAwesomeIcon icon={solidHeart} /></span> */}
+                <span className='icon' onClick={onClickHandler}>X</span>
             </div>
         </div>
 

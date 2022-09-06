@@ -1,12 +1,14 @@
-.catalog-container{
+.catalog-container {
     text-align: center;
     min-height: 450px;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
+    width: 95%;
+    display: flex;
+    justify-content: center;
     gap: 1.5rem;
+    padding-left: 3rem;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-bottom: 3rem;
 }

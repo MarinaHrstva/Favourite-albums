@@ -12,7 +12,7 @@ const favouritesSlice = createSlice({
             state.favourites.unshift(action.payload)
         },
         remove: (state, action) => {
-            state.favourites= state.favourites.filter(x => x.id != action.payload)
+            state.favourites = state.favourites.filter(x => x.id != action.payload)
         }
 
     }
