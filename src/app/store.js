@@ -20,12 +20,12 @@ const persistConfig = {
     version: 1,
     storage,
   }
-  const persistedReducer = persistReducer(persistConfig, favouritesReducer, catalogReducer)
-  const persistedReducerCatalog = persistReducer(persistConfig, catalogReducer)
+  const persistedReducer = persistReducer(persistConfig, favouritesReducer)
+
 
 
 export  const store = configureStore({
-    reducer: {favourites:persistedReducer,catalog:persistedReducerCatalog},
+    reducer: {catalog:catalogReducer, favourites:persistedReducer},
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: {

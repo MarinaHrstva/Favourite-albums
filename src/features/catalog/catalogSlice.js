@@ -7,9 +7,9 @@ const initialState = {
     error: ''
 }
 
-export const fetchCatalog = createAsyncThunk('catalog/fetchCatalog', () => {
-  return  axios.get('https://jsonplaceholder.typicode.com/photos')
-        .then(res => res.data.splice(0,5))
+export const fetchCatalog = createAsyncThunk('catalog/fetchCatalog', async () => {
+    const res =await  axios.get('https://jsonplaceholder.typicode.com/photos')
+      return res.data.splice(0,5)
 })
 
 const catalogSlice = createSlice({
